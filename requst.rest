@@ -1,0 +1,147 @@
+//user
+
+GET https://127.0.0.1:3443/users
+
+###
+POST https://127.0.0.1:3443/users
+Content-Type: application/json
+
+{
+    "login": "Samsa",
+    "email": "samsa@gmail.com",
+    "password": "421832",
+    "roleId": 1
+}
+
+###
+
+DELETE https://127.0.0.1:3443/users/delete/2
+
+###
+
+PUT  https://127.0.0.1:3443/users/update/1
+Content-Type: application/json
+
+{
+    "login": "Pudz",
+    "email": "pudz@gmail.com",
+    "password": "pudz22",
+    "roleId": 2
+}
+
+###
+
+//role
+
+GET  https://127.0.0.1:3443/roles
+
+###
+
+GET  https://127.0.0.1:3443/roles/2
+
+###
+
+POST https://127.0.0.1:3443/roles
+Content-Type: application/json
+
+{
+    "name": "Admin"
+}
+
+###
+
+DELETE   https://127.0.0.1:3443/roles/delete/3
+
+###
+
+PUT  https://127.0.0.1:3443/roles/update/4
+Content-Type: application/json
+
+{
+    "name":"Prodavez"
+}
+
+###
+
+//products
+
+GET https://127.0.0.1:3443/product
+
+###
+
+POST https://127.0.0.1:3443/product
+Content-Type: application/json
+
+{
+    "title": "Xbox series x",
+    "description": "Xbox series x 500GB",
+    "category": "Consol",
+    "price": 20000,
+    "photos": [
+        "xbox_photo",
+        "xbox_fhoto2"
+    ]
+}
+
+###
+
+POST https://127.0.0.1:3443/product/search?category=Техника&minPrice=15000&maxPrice=37300
+
+###
+
+DELETE  https://127.0.0.1:3443/product/delete/1
+
+###
+
+PUT https://127.0.0.1:3443/product/update/6
+Content-Type: application/json
+
+{
+    "id": 2,
+    "title": "Xbox series s",
+    "description": "Xbox series s 500GB",
+    "category": "Consol",
+    "price": 29000,
+    "photos": [
+      "xbox_fhoto",
+      "xbox_fhoto2",
+      "xbox_fhoto3"
+    ]
+}
+
+//messages
+
+###
+
+GET https://127.0.0.1:3443/messages/get?userId=1&chatPartnerId=2&productId=2
+
+###
+
+POST https://127.0.0.1:3443/messages/send
+Content-Type: application/json
+
+{
+  "senderId": 1,
+  "recipientId": 2,
+  "productId": 2,
+  "content": "Привет , поторгуемся?"
+}
+
+###
+
+PATCH https://127.0.0.1:3443/messages/read/1
+Content-Type: application/json
+
+###
+
+//login
+
+POST https://127.0.0.1:3443/users/login
+Content-Type: application/json
+
+{
+    "login": "Samsa",
+    "password": "421832"
+}
+
+

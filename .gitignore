@@ -1,0 +1,8 @@
+#node_modules
+node_modules/
+
+#dist и все в ней
+dist/
+
+.env
+
